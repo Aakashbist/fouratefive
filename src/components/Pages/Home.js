@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import LandingPage from "./LandingPage";
-import Education from "./education/Education";
-import Skill from "./skill/Skill";
-import Experience from "./experience/Experience";
+import AboutPage from "./AboutPage";
+import Menu from "./Menu";
+import ContactUs from "./ContactUs";
 
 const Home = () => {
   return (
     <div>
       <LandingPage />
-      <Experience />
-      <Education />
-      <Skill />
+      <AboutPage />
+      <Menu />
+      <ContactUs />
     </div>
   );
 };

@@ -14,21 +14,18 @@ function Nav() {
   return (
     <nav className="navbar">
       <div className="navbar__brand-title">
-        <NavLink to={"/"}> Aakash Bista</NavLink>
+        <NavLink to={"/"}> FOUR ATE FIVE </NavLink>
       </div>
-
       <input type="checkbox" className="toggler" />
       <div className="hamburger">
-        <div className="navicon"></div>
+        <div className="navicon"> </div>
       </div>
-
       <div className="navbar__links ">
         <ul className="navbar__list">
           {/* {paths.map((path, index) => (
-                        <NavLink key={index} className="navbar__link" activeClassName="navbar__current" to={path.link}>{path.text}</NavLink>
-                    ))
-                    } */}
-
+                                          <NavLink key={index} className="navbar__link" activeClassName="navbar__current" to={path.link}>{path.text}</NavLink>
+                                      ))
+                                      } */}
           <Link
             className="navbar__link"
             activeClass="navbar__current"
@@ -38,41 +35,40 @@ function Nav() {
             offset={-80}
             duration={500}
           >
-            Home
+            HOME
           </Link>
           <Link
             className="navbar__link"
             activeClass="navbar__current"
-            to="experience"
+            to="menu"
             spy={true}
             smooth={true}
             offset={-80}
             duration={500}
           >
-            Experience
+            MENU
           </Link>
           <Link
             className="navbar__link"
             activeClass="navbar__current"
-            to="education"
+            to="aboutPage"
             spy={true}
             smooth={true}
             offset={-80}
             duration={500}
           >
-            Education
+            ABOUT US
           </Link>
-
           <Link
             className="navbar__link"
             activeClass="navbar__current"
-            to="skill"
+            to="contactUs"
             spy={true}
             smooth={true}
             offset={-80}
             duration={500}
           >
-            Skills
+            CONTACT US
           </Link>
         </ul>
       </div>

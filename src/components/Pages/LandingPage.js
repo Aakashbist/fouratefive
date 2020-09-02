@@ -9,7 +9,7 @@ function Home() {
     <section className="home" id="landingPage">
       <Grid
         container
-        direction="row"
+        direction="column"
         justify={"center"}
         alignItems={"center"}
         className="item"
@@ -19,8 +19,8 @@ function Home() {
           item
           xs={12}
           sm={10}
-          md={8}
-          lg={8}
+          md={12}
+          lg={12}
           justify={"center"}
           alignItems={"center"}
         >
@@ -28,7 +28,7 @@ function Home() {
             container
             direction="row"
             justify={"space-between"}
-            alignItems={"flex-start"}
+            alignItems={"center"}
           >
             <Grid
               container
@@ -37,40 +37,25 @@ function Home() {
               alignItems={"center"}
               className=""
             >
-              <Grid container item xs={12} sm={12} md={6} lg={6}>
-                <Grid container direction="column" className="info-text">
-                  <h1>Mobile/Web Application Developer</h1>
+              <Grid container item xs={12} sm={12} md={12} lg={12}>
+                <Grid
+                  container
+                  direction="column"
+                  justify="space-evenly"
+                  className="info-text"
+                >
+                  <h1> SURRY HILLS LOCAL </h1>{" "}
                   <h2>
-                    I'm a software developer with experience in web and android
-                    application development. I mostly love to work with Java,
-                    Kotlin, C#, React Native, SQL and Firebase
-                  </h2>
-
-                  <Grid
-                    container
-                    direction="row"
-                    alignItems="center"
-                    justify="center"
-                  >
-                    <Grid
-                      container
-                      direction="row"
-                      className="home__socialMedia socialMediaIcon"
-                    >
-                      <SocialMedia />
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Grid>
-              <Grid container item xs={12} sm={12} md={6} lg={6}>
-                <Grid container direction="row">
-                  <img className="" src={image} alt="" />
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+                    SINGLE O COFFEE, MIDDLE - EASTERN INSPIRED FOOD, HEARTY
+                    SANDWICHES, HEALTHY SALADS, SUPERFOOD SMOOTHIES, HOME MADE
+                    CAKES BREAKFAST & LUNCH, 7 DAYS A WEEK.{" "}
+                  </h2>{" "}
+                </Grid>{" "}
+              </Grid>{" "}
+            </Grid>{" "}
+          </Grid>{" "}
+        </Grid>{" "}
+      </Grid>{" "}
     </section>
     //  <div className="home" id="landingPage">
 

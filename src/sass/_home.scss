@@ -1,5 +1,5 @@
 .home {
-  background: url("../assets/background1.jpg") no-repeat center center/cover;
+  background: url("../assets/homepage.jpeg") no-repeat center center/cover;
 
   &__socialMedia {
     padding-top: 30px;
@@ -13,32 +13,36 @@
 
   .info-text {
     padding: 20px 20px 20px 0;
-    text-align: left;
+    text-align: center;
   }
+
   .item {
-    background-color: #f1f1f1;
+    // background-color: #f1f1f1;
+
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 40px;
-    color: $secondary-black;
+    color: $white;
   }
 
   h1 {
     padding-top: 35px;
     padding-bottom: 10px;
-    font-size: calc(25px + 1 * ((100vw - 320px) / 680));
+    font-weight: bolder;
+    font-size: calc(35px + 1 * ((100vw - 320px) / 680));
     line-height: calc(35px + 1 * ((100vw - 320px) / 680));
   }
 
   h2 {
     padding-top: 15px;
     padding-bottom: 10px;
-
-    font-size: calc(20px + 1 * ((100vw - 320px) / 680));
-    line-height: calc(25px + 1 * ((100vw - 320px) / 680));
+    font-weight: 600;
+    font-size: calc(15px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(35px + 1 * ((100vw - 320px) / 680));
   }
+
   p {
     padding-top: 25px;
     padding-bottom: 25px;
@@ -53,15 +57,18 @@
     // animation: up-down 2s ease-in-out infinite alternate-reverse both;
   }
 }
+
 .cardContainer {
   margin: 120px;
 }
+
 @media screen and (max-width: 500px) {
   .home {
     img {
       margin-left: 0 !important;
       max-width: 300px;
     }
+
     .item {
       max-width: 90vw;
       padding-left: 20px;
@@ -87,6 +94,7 @@
   0% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(-10px);
   }
@@ -96,25 +104,29 @@
   0% {
     transform: translateY(5px);
   }
+
   100% {
     transform: translateY(-5px);
   }
 }
 
-@keyframes slide {
-  25% {
-    background-image: url("../assets/aakash.jpg");
-  }
-  50% {
-    background-image: url("../assets/computer.jpeg");
-  }
-  75% {
-    background-image: url("../assets/photo.png");
-  }
-  100% {
-    background-image: url("../assets/mainImg.png");
-  }
-}
+// @keyframes slide {
+//   25% {
+//     background-image: url("../assets/aakash.jpg");
+//   }
+
+//   50% {
+//     background-image: url("../assets/computer.jpeg");
+//   }
+
+//   75% {
+//     background-image: url("../assets/photo.png");
+//   }
+
+//   100% {
+//     background-image: url("../assets/mainImg.png");
+//   }
+// }
 
 // ipad
 @media screen and (min-width: 550px) and (max-width: 768px) {
