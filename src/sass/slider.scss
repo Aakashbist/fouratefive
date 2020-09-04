@@ -1,0 +1,18 @@
+.slide {
+    height: auto;
+
+    img {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .slide {
+
+        .img {
+            height: fit-content;
+            max-width: 200px !important;
+            margin-bottom: 20px;
+        }
+    }
+}

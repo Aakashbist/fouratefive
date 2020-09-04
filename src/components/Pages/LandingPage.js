@@ -1,8 +1,5 @@
-import React from "react";
-
-import SocialMedia from "./SocialMedia";
-import image from "../../assets/main.svg";
 import { Grid } from "@material-ui/core";
+import React from "react";
 
 function Home() {
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import paths from "../constants/AppRoute";
+import PATHS from "../constants/AppRoute";
 import {
   Link,
   Element,
@@ -9,6 +9,7 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+import Review from "./Pages/Review";
 
 function Nav() {
   return (
@@ -22,10 +23,6 @@ function Nav() {
       </div>
       <div className="navbar__links ">
         <ul className="navbar__list">
-          {/* {paths.map((path, index) => (
-                                          <NavLink key={index} className="navbar__link" activeClassName="navbar__current" to={path.link}>{path.text}</NavLink>
-                                      ))
-                                      } */}
           <Link
             className="navbar__link"
             activeClass="navbar__current"
@@ -70,6 +67,13 @@ function Nav() {
           >
             CONTACT US
           </Link>
+          {/* <NavLink
+            className="navbar__link"
+            activeClassName="navbar__current"
+            to="/review"
+          >
+            Skill
+          </NavLink> */}
         </ul>
       </div>
     </nav>

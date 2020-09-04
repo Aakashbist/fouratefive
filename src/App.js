@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 import { BrowserRouter, Switch, Route, Router } from 'react-router-dom';
 import AuthContainer from './containers/AuthContainer';
 import './sass/App.scss'
@@ -10,6 +11,7 @@ function App() {
       <Switch>
         <Route path="/" component={AuthContainer} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
