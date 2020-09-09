@@ -49,22 +49,29 @@ const ContactUs = () => {
   return (
     <section className="contact" id="contactUs">
       <Container>
-        {/* <Grid className="topography">
+        <Grid className="topography">
           <h1>CONTACT US</h1>
-        </Grid> */}
-        {/* <Grid>
-          <Map />
-        </Grid> */}
+        </Grid>
+
         <Grid container direction="column">
           <Grid container direction="row" justify={"space-between"}>
             <Grid item xs={12} sm={12} md={5} lg={5} className="card">
               <Grid
                 container
                 direction="row"
-                // alignItems="center"
-                // justify="left"
+                alignItems="center"
+                justify="center"
               >
-                <Map />
+                <Grid item>
+                  <h1>Hours</h1>
+                  <p>
+                    Monday - Friday - 7am-2.30pm
+                    <br />
+                    Saturday - 7:30am - 2.30pm
+                    <br />
+                    Sunday - 8:00am - 2:30pm
+                  </p>
+                </Grid>
               </Grid>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={6} className="card">
