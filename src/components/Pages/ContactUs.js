@@ -1,86 +1,178 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Container } from "@material-ui/core";
+import { Grid, Container, TextField, Button, Icon } from "@material-ui/core";
+import emailjs from "emailjs-com";
+import { useForm } from "react-hook-form";
+import { makeStyles } from "@material-ui/core/styles";
+import Map from "../Map";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: "25ch",
+    },
+    "& .MuiInputBase-input": {
+      color: "#535353 !important",
+      fontSize: "15px !important",
+      paddingTop: "14.5px !important",
+    },
+  },
+}));
 
 const ContactUs = () => {
+  const classes = useStyles();
+  let { register, handleSubmit, errors } = useForm();
+  const onSubmit = (data) => {
+    console.log("data ", data);
+  };
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "gmail",
+        "template_tetglfn",
+        e.target,
+        "user_PNExwXoFc1St0SmCf9zHS"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
   return (
     <section className="contact" id="contactUs">
-        <h1>
-            contact us in progress
-        </h1>
-      {/* <Container>
-        <Grid container direction="row">
-          <Grid container direction="row" justify={"space-between"} spacing={3}>
-            <Grid
-              container
-              direction="row"
-              justify={"space-between"}
-              alignItems={"flex-start"}
-            >
-              <Grid container item xs={12} sm={12} md={7} lg={7}>
-                <Grid container>
-                  <Grid item>
-                    <h1>
-                      Fouratefive is a buzzing neighbourhood brunch spot in
-                      Surry Hills
-                    </h1>
-                    <p>
-                      {" "}
-                      Since we opened our doors in 2009, we’ve been obsessed by
-                      creating a place that you would want to visit everyday.
-                      It’s all about the casual atmosphere, super friendly
-                      service, satisfying dishes & Single O coffee made with
-                      love & care!
-                      <br />
-                      <br /> In 2015, we renovated the café, maintaining the
-                      open floor plan and deciding to focus more on the Israeli
-                      style menu aligning with our Jewish heritage! Nothing
-                      beats a Jewish grandmothers cooking!
-                      <br />
-                      <br /> Earlier this year (2020), we spruced it up a little
-                      more with some funky new wall tiles and the addition of
-                      some great artworks by local Surry Hills artists.
-                      <br />
-                      <br />
-                      The ultimate Jew food must-trys are the ‘shakshuka’ – eggs
-                      baked in a rich tomato & red pepper sauce, served w feta &
-                      homemade pita, the ‘485 breakfast plate’ – falafel, boiled
-                      egg, chilli hummus, amba, pickles, chopped salad, chilli,
-                      tahini & pita, the ‘potato latkas’ and the homemade
-                      chickpea falafel.
-                    </p>
-                  </Grid>
-                </Grid>
+      <Container>
+        {/* <Grid className="topography">
+          <h1>CONTACT US</h1>
+        </Grid> */}
+        {/* <Grid>
+          <Map />
+        </Grid> */}
+        <Grid container direction="column">
+          <Grid container direction="row" justify={"space-between"}>
+            <Grid item xs={12} sm={12} md={5} lg={5} className="card">
+              <Grid
+                container
+                direction="row"
+                // alignItems="center"
+                // justify="left"
+              >
+                <Map />
               </Grid>
-              <Grid container item xs={12} sm={12} md={3} lg={3}>
-                <Grid container className="info-text ">
-                  <Grid item>
-                    <h1>PHONE + EMAIL</h1>
-                    <p>
-                      (02) 9698 6485
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} lg={6} className="card">
+              <Grid container direction="row" style={{ marginTop: "2vw" }}>
+                <Grid container item xs={12} sm={12} md={12} lg={12}>
+                  <Grid container direction="column">
+                    <form onSubmit={sendEmail}>
+                      <Grid
+                        container
+                        direction="row"
+                        justify={"space-between"}
+                        spacing={3}
+                      >
+                        <Grid container item xs={12} sm={12} md={12} lg={12}>
+                          <TextField
+                            variant="outlined"
+                            className="textfield"
+                            name="name"
+                            // value={description}
+                            // onChangeText={(description) =>
+                            //   setDescription(description)
+                            // }
+                            fullWidth
+                            placeholder="first name"
+                            autoCapitalize="none"
+                          />
+                        </Grid>
+                      </Grid>
+                      <Grid container direction="row">
+                        <Grid container item xs={12} sm={12} md={12} lg={12}>
+                          <TextField
+                            name="email"
+                            variant="outlined"
+                            className="textfield"
+                            fullWidth
+                            // errors={!!errors.email}
+                            placeholder="Email*"
+                            // fieldRequired={register({
+                            //   pattern: /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
+                            //   required: true,
+                            // })}
+                          />
+                        </Grid>
+                      </Grid>
+                      <Grid
+                        container
+                        direction="row"
+                        justify={"space-between"}
+                        alignItems={"center"}
+                      >
+                        <Grid
+                          container
+                          item
+                          xs={12}
+                          sm={12}
+                          md={12}
+                          lg={12}
+                          justify={"space-between"}
+                          alignItems="center"
+                        >
+                          <TextField
+                            id="standard-basic"
+                            name="message"
+                            variant="outlined"
+                            className="textfield"
+                            fullWidth
+                            multiline
+                            // // errors={!!errors.company_name}
+                            // fieldRequired={register({ required: true })}
+                            placeholder="message*"
+                          />
+                        </Grid>
+                      </Grid>
+
+                      <Grid
+                        container
+                        direction="row"
+                        alignItems="center"
+                        justify="center"
+                      >
+                        <Grid
+                          container
+                          direction="row"
+                          alignItems="center"
+                          justify="center"
+                        >
+                          <Button
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            size="large"
+                            className={classes.margin}
+                          >
+                            Submit
+                          </Button>
+                        </Grid>
+                      </Grid>
                       <br />
-                      info@fouratefive.com{" "}
-                    </p>
-                  </Grid>
-                  <Grid item>
-                    <h1>Location</h1>
-                    <p>485 Crown Street, Surry Hills, NSW, 2010, Australia </p>
-                  </Grid>
-                  <Grid item>
-                    <h1>Hours</h1>
-                    <p>
-                      Monday - Friday - 7am-2.30pm
+
                       <br />
-                      Saturday - 7:30am - 2.30pm
-                      <br />
-                      Sunday - 8:00am - 2:30pm
-                    </p>
+                    </form>
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Container> */}
+      </Container>
     </section>
   );
 };

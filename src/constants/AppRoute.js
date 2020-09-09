@@ -1,6 +1,6 @@
 import Home from "../components/Pages/LandingPage";
 import About from "../components/Pages/AboutPage";
-import Menu from "../components/Pages/Menu";
+import Menu from "../components/Pages/menu/Menu";
 import Review from "../components/Pages/Review";
 import ContactUs from "../components/Pages/ContactUs";
 

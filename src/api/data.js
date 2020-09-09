@@ -5,9 +5,9 @@ export const MenuDetails = {
       price: "$5.5",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "sourdough, soy, linseed, bagel, rye" },
-        { name: "with homemade jam" },
-        { name: "with avocado, lemon & chilli" },
+        "sourdough, soy, linseed, bagel, rye",
+        "with homemade jam",
+        "with avocado, lemon & chilli",
       ],
     },
     {
@@ -15,9 +15,9 @@ export const MenuDetails = {
       price: "$12",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "scrambled/ fried/ poached" },
-        { name: " chilli & lemon mushrooms" },
-        { name: "bacon/smoked salmon/halaoumi" },
+        "scrambled/ fried/ poached",
+        " chilli & lemon mushrooms",
+        "bacon/smoked salmon/halaoumi",
       ],
     },
     {
@@ -25,9 +25,9 @@ export const MenuDetails = {
       price: "$21.5",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "falafel, boiled egg, pickled cabbage," },
-        { name: "  chopped salad, israeli pickles, tahini, amba," },
-        { name: "marinated olives w bagel or pita" },
+        "falafel, boiled egg, pickled cabbage,",
+        "  chopped salad, israeli pickles, tahini, amba,",
+        "marinated olives w bagel or pita",
       ],
     },
     {
@@ -35,9 +35,9 @@ export const MenuDetails = {
       price: "$19",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "on sourdough w avocado, pickled onion" },
-        { name: "feta, fresh herbs, shallots, " },
-        { name: "poached egg & pistachio dukkah" },
+        "on sourdough w avocado, pickled onion",
+        "feta, fresh herbs, shallots, ",
+        "poached egg & pistachio dukkah",
       ],
     },
     {
@@ -45,20 +45,16 @@ export const MenuDetails = {
       price: "$15",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "seasonal fruit, toasted almonds," },
-        { name: "  honey VEGAN" },
-        { name: " w no honey" },
+        "seasonal fruit, toasted almonds,",
+        "  honey VEGAN",
+        " w no honey",
       ],
     },
     {
       itemName: "BANANA LOAF",
       price: "$6.5",
       image: "someimage.jpg",
-      Ingredients: [
-        { name: "w sour cream cheese & dulce de leche" },
-        { name: " " },
-        { name: " " },
-      ],
+      Ingredients: ["w sour cream cheese & dulce de leche", " ", " "],
     },
 
     {
@@ -66,9 +62,9 @@ export const MenuDetails = {
       price: "$17.5",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "filled w peanut butter & banana" },
-        { name: " topped w sour cream cheese" },
-        { name: "rhubarb, dulce de leche, nut crumble & maple" },
+        "filled w peanut butter & banana",
+        " topped w sour cream cheese",
+        "rhubarb, dulce de leche, nut crumble & maple",
       ],
     },
     {
@@ -76,9 +72,8 @@ export const MenuDetails = {
       price: "$19",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "eggs baked in spiced tomato & red pepper sauce" },
-        { name: "  crumbled feta, shallots, homemade pita" },
-        { name: "  " },
+        "eggs baked in spiced tomato & red pepper sauce",
+        "  crumbled feta, shallots, homemade pita",
       ],
     },
     {
@@ -86,9 +81,8 @@ export const MenuDetails = {
       price: "$21.5",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "slow cooked lamb shoulder w silverbeet, leek, " },
-        { name: "potatoes & peas, sour cream, shallots & homemade pita " },
-        { name: " " },
+        "slow cooked lamb shoulder w silverbeet, leek, ",
+        "potatoes & peas, sour cream, shallots & homemade pita ",
       ],
     },
 
@@ -97,9 +91,9 @@ export const MenuDetails = {
       price: "$21",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "sauteed winter greens & mushrooms" },
-        { name: " ginger & tumeric tahini, quinoa w shallots & herbs " },
-        { name: " chilli oil & a poached egg" },
+        "sauteed winter greens & mushrooms",
+        " ginger & tumeric tahini, quinoa w shallots & herbs ",
+        " chilli oil & a poached egg",
       ],
     },
     {
@@ -107,9 +101,8 @@ export const MenuDetails = {
       price: "$15",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "crispy bacon, soft fried egg, smashed avo" },
-        { name: "mustard, aioli on a potato bun" },
-        { name: "  " },
+        "crispy bacon, soft fried egg, smashed avo",
+        "mustard, aioli on a potato bun",
       ],
     },
     {
@@ -117,20 +110,15 @@ export const MenuDetails = {
       price: "$18",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "kale pesto brown rice, sautéed kale, pickled vegetables" },
-        { name: "tamari nuts & seeds, avocado, tahini (GF / DF / VEGAN) " },
-        { name: " " },
+        "kale pesto brown rice, sautéed kale, pickled vegetables",
+        "tamari nuts & seeds, avocado, tahini (GF / DF / VEGAN) ",
       ],
     },
     {
       itemName: "HOUSE MADE MUESLI",
       price: "$11",
       image: "someimage.jpg",
-      Ingredients: [
-        { name: "natural or granola" },
-        { name: " seasonal fruit" },
-        { name: "organic yoghurt" },
-      ],
+      Ingredients: ["natural or granola", " seasonal fruit", "organic yoghurt"],
     },
   ],
 
@@ -139,20 +127,16 @@ export const MenuDetails = {
       itemName: "WINTER SOUPS",
       price: "$15",
       image: "someimage.jpg",
-      Ingredients: [
-        { name: "different selections every week" },
-        { name: "  " },
-        { name: " " },
-      ],
+      Ingredients: ["different selections every week"],
     },
     {
       itemName: "CHICKEN SANDWICH",
       price: "$15",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "free range chicken in aioli, spring onions " },
-        { name: " fresh herbs, bacon, cheese, cranberry," },
-        { name: "lettuce, pickle" },
+        "free range chicken in aioli, spring onions ",
+        " fresh herbs, bacon, cheese, cranberry,",
+        "lettuce, pickle",
       ],
     },
     {
@@ -160,9 +144,9 @@ export const MenuDetails = {
       price: "$17",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "Chicken schnitzel, israeli chopped salad, " },
-        { name: " pickles, amba, tahini" },
-        { name: "& hummus in a homemade pita " },
+        "Chicken schnitzel, israeli chopped salad, ",
+        " pickles, amba, tahini",
+        "& hummus in a homemade pita ",
       ],
     },
     {
@@ -170,9 +154,9 @@ export const MenuDetails = {
       price: "$17",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "house made falafel patty, hummus," },
-        { name: "  red cabbage, onion, pickles" },
-        { name: "  tahini & chips" },
+        "house made falafel patty, hummus,",
+        "  red cabbage, onion, pickles",
+        "  tahini & chips",
       ],
     },
     {
@@ -180,20 +164,16 @@ export const MenuDetails = {
       price: "$13.5",
       image: "someimage.jpg",
       Ingredients: [
-        { name: "honey roasted carrots, spiced chickpeas, " },
-        { name: "pickled cabbage, israeli chopped salad " },
-        { name: "tahini, fresh herbs " },
+        "honey roasted carrots, spiced chickpeas, ",
+        "pickled cabbage, israeli chopped salad ",
+        "tahini, fresh herbs ",
       ],
     },
     {
       itemName: "CHIPS",
       price: "$5.5/10",
       image: "someimage.jpg",
-      Ingredients: [
-        { name: "Hand-cut chips" },
-        { name: " side 4" },
-        { name: "Bowl 8 " },
-      ],
+      Ingredients: ["Hand-cut chips", " side 4", "Bowl 8 "],
     },
   ],
 };

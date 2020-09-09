@@ -1,36 +1,39 @@
 .menu {
   height: auto;
   color: $secondary-black;
-  background: red;
+  background: $primary-grey;
   padding: 20px;
+
+  .title {
+    align-items: center;
+    font-weight: bolder;
+    letter-spacing: 2;
+    font-size: calc(70px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(60px + 6 * ((100vw - 320px) / 680));
+  }
 
   .topography {
     color: $secondary-black;
     padding: 20px;
-    text-align: left;
+    text-align: center;
     font-weight: 500;
     letter-spacing: 1;
-    font-size: calc(52px + 1 * ((100vw - 320px) / 680));
+    font-size: calc(20px + 1 * ((100vw - 320px) / 680));
     line-height: calc(40px + 6 * ((100vw - 320px) / 680));
   }
 
   .card {
-    background-color: #d9d9d9;
+    background-color: #e6e6e6;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
     transition: 0.3s;
-    width: 100%;
-    margin: 40px;
+    margin: 10px;
   }
 
-  .item {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    max-width: 1100px;
-    margin: 10px auto;
-    color: $secondary-black;
-    margin-bottom: 2vh;
+  .card:hover {
+    opacity: 1;
+    transform: scale(1.015);
   }
+
 
   img {
     margin: 50px 50px 50px 0;
@@ -39,32 +42,28 @@
   }
 
   .info-text {
-    padding: 20px 20px 20px 0;
-    padding-left: 40px;
-    text-align: center;
-    color: $secondary-black;
+    padding: 10px;
+
   }
 
   h1 {
-    padding-top: 35px;
-    padding-bottom: 10px;
-
-    font-size: calc(25px + 1 * ((100vw - 320px) / 680));
+    margin: 20px;
+    color: $navigation-grey;
+    font-weight: bolder;
+    font-size: calc(35px + 1 * ((100vw - 320px) / 680));
     line-height: calc(25px + 1 * ((100vw - 320px) / 680));
   }
 
   h2 {
-    padding-top: 15px;
-    padding-bottom: 10px;
-
-    font-size: calc(20px + 1 * ((100vw - 320px) / 680));
+    color: $navigation-grey;
+    font-weight: bolder;
+    font-size: calc(18px + 1 * ((100vw - 320px) / 680));
     line-height: calc(25px + 1 * ((100vw - 320px) / 680));
   }
 
   p {
-    padding-top: 25px;
-    padding-bottom: 25px;
-
+    margin: 5px;
+    padding-left: 10px;
     font-size: calc(15px + 1 * ((100vw - 320px) / 680));
     line-height: calc(25px + 1 * ((100vw - 320px) / 680));
   }
