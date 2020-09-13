@@ -7,17 +7,25 @@ function SocialMedia() {
     <div>
       <Grid container justify="left" spacing={3}>
         <Grid item style={{ color: "#0096EF" }}>
-          <a href="#" rel="noopener noreferrer">
+          <a
+            href="https://www.facebook.com/fouratefive"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Facebook className="socialMediaIcon" />
           </a>
         </Grid>
-        <Grid item style={{ color: "#20A464" }}>
-          <a href="213123313" rel="noopener noreferrer">
+        {/* <Grid item style={{ color: "#20A464" }}>
+          <a rel="noopener noreferrer">
             <Call className="socialMediaIcon" />
           </a>
-        </Grid>
+        </Grid> */}
         <Grid item style={{ color: "#7f1734" }}>
-          <a href="213123313" rel="noopener noreferrer">
+          <a
+            target="_blank"
+            href="https://www.instagram.com/explore/locations/145210/fouratefive/?hl=en"
+            rel="noopener noreferrer"
+          >
             <Instagram className="socialMediaIcon" />
           </a>
         </Grid>

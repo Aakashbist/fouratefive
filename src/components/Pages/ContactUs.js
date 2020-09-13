@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Container, TextField, Button, Icon } from "@material-ui/core";
+import {
+  Grid,
+  Container,
+  Typography,
+  TextField,
+  Button,
+  Icon,
+  Box,
+} from "@material-ui/core";
 import emailjs from "emailjs-com";
 import { useForm } from "react-hook-form";
 import { makeStyles } from "@material-ui/core/styles";
-import Map from "../Map";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,15 +27,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ContactUs = () => {
+  const [error, setError] = useState();
   const classes = useStyles();
   let { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     console.log("data ", data);
   };
 
-  function sendEmail(e) {
+  function sendEmail(e, data) {
     e.preventDefault();
-
+    alert(data);
     emailjs
       .sendForm(
         "gmail",
@@ -52,131 +60,100 @@ const ContactUs = () => {
         <Grid className="topography">
           <h1>CONTACT US</h1>
         </Grid>
-
-        <Grid container direction="column">
-          <Grid container direction="row" justify={"space-between"}>
-            <Grid item xs={12} sm={12} md={5} lg={5} className="card">
-              <Grid
-                container
-                direction="row"
-                alignItems="center"
-                justify="center"
-              >
-                <Grid item>
-                  <h1>Hours</h1>
-                  <p>
-                    Monday - Friday - 7am-2.30pm
-                    <br />
-                    Saturday - 7:30am - 2.30pm
-                    <br />
-                    Sunday - 8:00am - 2:30pm
-                  </p>
-                </Grid>
-              </Grid>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+          spacing={2}
+        >
+          <Grid item sm={12} lg={5} md={5}>
+            <Grid item>
+              <h1>Hours</h1>
+              <p>
+                Monday - Friday - 7am-2.30pm
+                <br />
+                Saturday - 7:30am - 2.30pm
+                <br />
+                Sunday - 8:00am - 2:30pm
+              </p>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={6} className="card">
-              <Grid container direction="row" style={{ marginTop: "2vw" }}>
-                <Grid container item xs={12} sm={12} md={12} lg={12}>
-                  <Grid container direction="column">
-                    <form onSubmit={sendEmail}>
-                      <Grid
-                        container
-                        direction="row"
-                        justify={"space-between"}
-                        spacing={3}
-                      >
-                        <Grid container item xs={12} sm={12} md={12} lg={12}>
-                          <TextField
-                            variant="outlined"
-                            className="textfield"
-                            name="name"
-                            // value={description}
-                            // onChangeText={(description) =>
-                            //   setDescription(description)
-                            // }
-                            fullWidth
-                            placeholder="first name"
-                            autoCapitalize="none"
-                          />
-                        </Grid>
-                      </Grid>
-                      <Grid container direction="row">
-                        <Grid container item xs={12} sm={12} md={12} lg={12}>
-                          <TextField
-                            name="email"
-                            variant="outlined"
-                            className="textfield"
-                            fullWidth
-                            // errors={!!errors.email}
-                            placeholder="Email*"
-                            // fieldRequired={register({
-                            //   pattern: /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-                            //   required: true,
-                            // })}
-                          />
-                        </Grid>
-                      </Grid>
-                      <Grid
-                        container
-                        direction="row"
-                        justify={"space-between"}
-                        alignItems={"center"}
-                      >
-                        <Grid
-                          container
-                          item
-                          xs={12}
-                          sm={12}
-                          md={12}
-                          lg={12}
-                          justify={"space-between"}
-                          alignItems="center"
-                        >
-                          <TextField
-                            id="standard-basic"
-                            name="message"
-                            variant="outlined"
-                            className="textfield"
-                            fullWidth
-                            multiline
-                            // // errors={!!errors.company_name}
-                            // fieldRequired={register({ required: true })}
-                            placeholder="message*"
-                          />
-                        </Grid>
-                      </Grid>
-
-                      <Grid
-                        container
-                        direction="row"
-                        alignItems="center"
-                        justify="center"
-                      >
-                        <Grid
-                          container
-                          direction="row"
-                          alignItems="center"
-                          justify="center"
-                        >
-                          <Button
-                            type="submit"
-                            variant="contained"
-                            color="primary"
-                            size="large"
-                            className={classes.margin}
-                          >
-                            Submit
-                          </Button>
-                        </Grid>
-                      </Grid>
-                      <br />
-
-                      <br />
-                    </form>
-                  </Grid>
-                </Grid>
-              </Grid>
+            <Grid item>
+              <h1>Location</h1>
+              <p>485 Crown Street, Surry Hills, NSW, 2010, Australia </p>
             </Grid>
+          </Grid>
+
+          <Grid
+            item
+            container
+            direction="column"
+            sm={12}
+            lg={5}
+            md={5}
+            className="card"
+          >
+            <form onSubmit={sendEmail}>
+              <Grid item>
+                <TextField
+                  variant="outlined"
+                  className="textfield"
+                  name="name"
+                  // value={name}
+                  // onChangeText={(description) =>
+                  //   setDescription(description)
+                  // }
+                  fullWidth
+                  placeholder="first name"
+                  autoCapitalize="none"
+                />
+              </Grid>
+              <Grid item>
+                <TextField
+                  variant="outlined"
+                  className="textfield"
+                  name="email"
+                  // value={email}
+                  // onChangeText={(description) =>
+                  //   setDescription(description)
+                  // }
+                  fullWidth
+                  placeholder="Email"
+                  autoCapitalize="none"
+                />
+              </Grid>
+              <Grid item>
+                <TextField
+                  variant="outlined"
+                  className="textfield"
+                  name="message"
+                  rows="5"
+                  multiline
+                  // value={message}
+                  // onChangeText={(description) =>
+                  //   setDescription(description)
+                  // }
+                  fullWidth
+                  placeholder="Message"
+                  autoCapitalize="none"
+                />
+              </Grid>
+              <Grid item>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  className={classes.margin}
+                  onClick={handleSubmit(sendEmail)}
+                >
+                  Submit
+                </Button>
+              </Grid>
+              <Grid item>
+                <p style={{ color: "red" }}>{error}</p>
+              </Grid>
+            </form>
           </Grid>
         </Grid>
       </Container>

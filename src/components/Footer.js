@@ -72,6 +72,7 @@ function Footer() {
                       ></EmailOutlined>
                       <span style={{ paddingLeft: "1rem" }}>485@gmail.com</span>
                     </p>
+
                     <p>
                       <Call
                         className="socialMediaIcon"
