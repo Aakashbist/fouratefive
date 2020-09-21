@@ -1,85 +1,103 @@
+import { Button, Container, Grid, TextField, Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import { Grid, Container } from "@material-ui/core";
+import { useForm } from "react-hook-form";
+import moment from "moment";
 
 const Review = () => {
+  let { register, handleSubmit, errors } = useForm();
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    const allReviews = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var todo = JSON.parse(localStorage.getItem(localStorage.key(i)));
+      allReviews.push(todo);
+    }
+    prepareReviewForView(allReviews);
+  }, []);
+
+  const prepareReviewForView = (data) => {
+    console.log("reviews", JSON.stringify(data));
+    setReviews(data);
+  };
+
+  const onSubmit = (data) => {
+    alert(data.message);
+    var date = new Date();
+    var key = date.getMilliseconds();
+
+    let currentDateTime = moment().parseZone().format("DD/MM/YYYY ");
+
+    var todo = { review: data.message, date: currentDateTime };
+    localStorage.setItem(key, JSON.stringify(todo));
+    window.location.reload();
+  };
   return (
-    <section className="menu" id="review">
-      <h1>Menu on progress</h1>
-      {/* <Container>
-        <Grid container direction="row">
-          <Grid container direction="row" justify={"space-between"} spacing={3}>
-            <Grid
-              container
-              direction="row"
-              justify={"space-between"}
-              alignItems={"flex-start"}
-            >
-              <Grid container item xs={12} sm={12} md={7} lg={7}>
-                <Grid container>
-                  <Grid item>
-                    <h1>
-                      {" "}
-                      Fouratefive is a buzzing neighbourhood brunch spot in
-                      Surry Hills
-                    </h1>
-                    <p>
-                      {" "}
-                      Since we opened our doors in 2009, we’ve been obsessed by
-                      creating a place that you would want to visit everyday.
-                      It’s all about the casual atmosphere, super friendly
-                      service, satisfying dishes & Single O coffee made with
-                      love & care!
-                      <br />
-                      <br /> In 2015, we renovated the café, maintaining the
-                      open floor plan and deciding to focus more on the Israeli
-                      style menu aligning with our Jewish heritage! Nothing
-                      beats a Jewish grandmothers cooking!
-                      <br />
-                      <br /> Earlier this year (2020), we spruced it up a little
-                      more with some funky new wall tiles and the addition of
-                      some great artworks by local Surry Hills artists.
-                      <br />
-                      <br />
-                      The ultimate Jew food must-trys are the ‘shakshuka’ – eggs
-                      baked in a rich tomato & red pepper sauce, served w feta &
-                      homemade pita, the ‘485 breakfast plate’ – falafel, boiled
-                      egg, chilli hummus, amba, pickles, chopped salad, chilli,
-                      tahini & pita, the ‘potato latkas’ and the homemade
-                      chickpea falafel.
-                    </p>
-                  </Grid>
-                </Grid>
-              </Grid>
-              <Grid container item xs={12} sm={12} md={3} lg={3}>
-                <Grid container className="info-text ">
-                  <Grid item>
-                    <h1>PHONE + EMAIL</h1>
-                    <p>
-                      (02) 9698 6485
-                      <br />
-                      info@fouratefive.com{" "}
-                    </p>
-                  </Grid>
-                  <Grid item>
-                    <h1>Location</h1>
-                    <p>485 Crown Street, Surry Hills, NSW, 2010, Australia </p>
-                  </Grid>
-                  <Grid item>
-                    <h1>Hours</h1>
-                    <p>
-                      Monday - Friday - 7am-2.30pm
-                      <br />
-                      Saturday - 7:30am - 2.30pm
-                      <br />
-                      Sunday - 8:00am - 2:30pm
-                    </p>
-                  </Grid>
-                </Grid>
-              </Grid>
+    <section className="review" id="">
+      <Container>
+        <Grid container direction="column" justify="center" alignItems="center">
+          <Grid className="topography">
+            <h1>Post your comments</h1>
+          </Grid>
+          {/* <form onSubmit={handleSubmit(onSubmit)}> */}
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            spacing={2}
+          >
+            <Grid item xs={7} md={6} lg={6} sm={7} spacing={1}>
+              <TextField
+                variant="outlined"
+                className="textfield"
+                name="message"
+                rows="5"
+                multiline
+                fullWidth
+                placeholder="Message"
+                autoCapitalize="none"
+                inputRef={register({ required: true })}
+              />
+            </Grid>
+            <Grid item xs={3} md={6} lg={4} sm={3} spacing={1}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                size="large"
+              >
+                Submit
+              </Button>
             </Grid>
           </Grid>
+          {/* </form> */}
+          <Grid container justify="center" alignItems="center">
+            {reviews &&
+              reviews.map((review, key) => {
+                return (
+                  <Grid
+                    container
+                    className="card"
+                    direction="column"
+                    justify="center"
+                    alignItems=""
+                  >
+                    <Grid direction="row" justify="space-evenly" spacing={2}>
+                      <Grid item>
+                        <Avatar />
+                      </Grid>
+                      <Grid item>{review.date}</Grid>
+                    </Grid>
+                    <Grid>
+                      <h2>{review.review}</h2>
+                    </Grid>
+                  </Grid>
+                );
+              })}
+          </Grid>
         </Grid>
-      </Container> */}
+      </Container>
     </section>
   );
 };

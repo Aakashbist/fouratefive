@@ -1,0 +1,89 @@
+.review {
+  height: auto;
+  color: $secondary-black;
+  background: #ffeeee;
+  padding: 20px;
+
+  .topography {
+    text-align: center;
+    font-weight: bolder;
+    letter-spacing: 1;
+    font-size: calc(20px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(40px + 6 * ((100vw - 320px) / 680));
+  }
+
+  .map {
+    height: 300px;
+    width: 300px;
+  }
+
+  .card {
+    background-color: $white;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 2rem;
+  }
+
+  .textfield {
+    font-size: xx-large;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .info-text {
+    padding: 20px 20px 20px 0;
+    padding-left: 40px;
+    text-align: center;
+    color: $secondary-black;
+  }
+
+  h1 {
+    padding-bottom: 20px;
+
+    font-size: calc(25px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(25px + 1 * ((100vw - 320px) / 680));
+  }
+
+  h2 {
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    font-size: calc(20px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(25px + 1 * ((100vw - 320px) / 680));
+  }
+
+  p {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    font-size: calc(15px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(25px + 1 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .review {
+    .container {
+      flex-direction: column;
+      align-content: space-between;
+      justify-items: center;
+      text-align: left;
+    }
+
+    .info-text {
+      text-align: left;
+    }
+
+    .img {
+      max-width: 200px !important;
+      margin-bottom: 20px;
+    }
+  }
+}

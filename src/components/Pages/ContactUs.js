@@ -38,7 +38,7 @@ const ContactUs = () => {
 
   function sendEmail(e, data) {
     e.preventDefault();
-    alert(data);
+
     emailjs
       .sendForm(
         "gmail",

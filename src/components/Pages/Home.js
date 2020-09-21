@@ -5,6 +5,7 @@ import Menu from "./menu/Menu";
 import Slider from "./Slider";
 import ContactUs from "./ContactUs";
 import FollowUs from "./FollowUs";
+import Review from "./Review";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Slider />
       <Menu />
       <ContactUs />
+      <Review />
       <FollowUs />
     </div>
   );
