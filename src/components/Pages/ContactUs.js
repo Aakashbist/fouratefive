@@ -37,8 +37,6 @@ const ContactUs = () => {
   };
 
   function sendEmail(e, data) {
-    e.preventDefault();
-
     emailjs
       .sendForm(
         "gmail",
@@ -107,10 +105,12 @@ const ContactUs = () => {
                     variant="outlined"
                     className="textfield"
                     name="name"
+                    error={errors.name ? true : false}
                     // value={name}
                     // onChangeText={(description) =>
                     //   setDescription(description)
                     // }
+                    inputRef={register({ required: true })}
                     fullWidth
                     placeholder="first name"
                     autoCapitalize="none"
@@ -121,10 +121,12 @@ const ContactUs = () => {
                     variant="outlined"
                     className="textfield"
                     name="email"
+                    inputRef={register({ required: true })}
                     // value={email}
                     // onChangeText={(description) =>
                     //   setDescription(description)
                     // }
+                    error={errors.email ? true : false}
                     fullWidth
                     placeholder="Email"
                     autoCapitalize="none"
@@ -137,15 +139,18 @@ const ContactUs = () => {
                     name="message"
                     rows="5"
                     multiline
+                    inputRef={register({ required: true })}
                     // value={message}
                     // onChangeText={(description) =>
                     //   setDescription(description)
                     // }
                     fullWidth
+                    error={errors.message ? true : false}
                     placeholder="Message"
                     autoCapitalize="none"
                   />
                 </Grid>
+                <Grid item style={{ color: "red" }}></Grid>
                 <Grid item>
                   <Button
                     type="submit"
