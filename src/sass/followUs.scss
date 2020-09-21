@@ -1,78 +1,75 @@
-.menu {
+.followUs {
   height: auto;
   color: $secondary-black;
-  background: $primary-grey;
+  background: $navigation-grey;
   padding: 20px;
 
-  .title {
-    align-items: center;
-    font-weight: bolder;
-    letter-spacing: 2;
-    font-size: calc(70px + 1 * ((100vw - 320px) / 680));
-    line-height: calc(60px + 6 * ((100vw - 320px) / 680));
-  }
-
   .topography {
-    color: $secondary-black;
-    padding: 20px;
     text-align: center;
-    font-weight: 500;
+    font-weight: bolder;
     letter-spacing: 1;
     font-size: calc(20px + 1 * ((100vw - 320px) / 680));
     line-height: calc(40px + 6 * ((100vw - 320px) / 680));
   }
 
+  .map {
+    height: 300px;
+    width: 300px;
+  }
+
   .card {
-    background-color: #e6e6e6;
+    background-color: $navigation-grey;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
     transition: 0.3s;
-    margin: 10px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 2rem;
   }
 
-  .card:hover {
-    opacity: 1;
-    transform: scale(1.015);
+  .textfield {
+    font-size: xx-large;
+    margin: 5px;
+    padding: 5px;
   }
-
 
   img {
-    margin: 50px 50px 50px 0;
-    padding-left: 40px;
-    max-width: 80%;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .info-text {
-    padding: 10px;
-    text-align: left;
-
+    padding: 20px 20px 20px 0;
+    padding-left: 40px;
+    text-align: center;
+    color: $secondary-black;
   }
 
   h1 {
-    margin: 10px;
-    color: $secondary-black;
-    font-weight: bolder;
-    font-size: calc(35px + 1 * ((100vw - 320px) / 680));
+    padding-bottom: 20px;
+
+    font-size: calc(25px + 1 * ((100vw - 320px) / 680));
     line-height: calc(25px + 1 * ((100vw - 320px) / 680));
   }
 
   h2 {
-    color: $navigation-grey;
-    font-weight: bolder;
-    font-size: calc(18px + 1 * ((100vw - 320px) / 680));
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    font-size: calc(20px + 1 * ((100vw - 320px) / 680));
     line-height: calc(25px + 1 * ((100vw - 320px) / 680));
   }
 
   p {
-    margin: 5px;
-    text-align: left;
-    padding-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
     font-size: calc(15px + 1 * ((100vw - 320px) / 680));
     line-height: calc(25px + 1 * ((100vw - 320px) / 680));
   }
 }
 
 @media screen and (max-width: 900px) {
-  .menu {
+  .followUs {
     .container {
       flex-direction: column;
       align-content: space-between;
@@ -82,7 +79,6 @@
 
     .info-text {
       text-align: left;
-
     }
 
     .img {

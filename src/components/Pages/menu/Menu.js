@@ -18,12 +18,12 @@ const Menu = () => {
   return (
     <section className="menu" id="menu">
       <Grid>
-        <p className="title">
+        <h1 className="title">
           FOUR
           <br /> ATE
           <br />
           FIVE
-        </p>
+        </h1>
 
         <Grid className="topography">
           <h1>BREAKFAST</h1>
