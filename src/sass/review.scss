@@ -52,18 +52,16 @@
   }
 
   h2 {
-    padding-top: 15px;
     padding-bottom: 10px;
-
+    text-align: left;
     font-size: calc(20px + 1 * ((100vw - 320px) / 680));
     line-height: calc(25px + 1 * ((100vw - 320px) / 680));
   }
 
   p {
-    padding-top: 25px;
     padding-bottom: 25px;
-
-    font-size: calc(15px + 1 * ((100vw - 320px) / 680));
+    text-align: left;
+    font-size: calc(10px + 1 * ((100vw - 320px) / 680));
     line-height: calc(25px + 1 * ((100vw - 320px) / 680));
   }
 }

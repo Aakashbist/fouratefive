@@ -2,6 +2,7 @@ import { Button, Container, Grid, TextField, Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import moment from "moment";
+import Rating from "@material-ui/lab/Rating";
 
 const Review = () => {
   let { register, handleSubmit, errors } = useForm();
@@ -58,11 +59,12 @@ const Review = () => {
             <Grid
               item
               container
+              direction="row"
               justify="center"
               alignItems="center"
               spacing={2}
             >
-              <Grid container item xs={12} sm={12} md={6} lg={6}>
+              <Grid item style={{ width: "700px" }}>
                 <TextField
                   variant="outlined"
                   className="textfield"
@@ -76,9 +78,9 @@ const Review = () => {
                   inputRef={register({ required: true })}
                 />
               </Grid>
-              <Grid container item xs={12} sm={12} md={4} lg={4}>
+              <Grid item>
                 <Button
-                  style={{}}
+                  style={{ margin: "10px" }}
                   type="submit"
                   variant="contained"
                   color="primary"
@@ -91,9 +93,9 @@ const Review = () => {
           </form>
         </Grid>
 
-        {/* <Grid item style={{ color: "red" }}>
-          {errors.message && <span>This is required</span>}
-        </Grid> */}
+        <Grid item className="topography">
+          <h2>Reviews</h2>
+        </Grid>
         <Grid
           container
           item
@@ -109,28 +111,33 @@ const Review = () => {
                   container
                   className="card"
                   direction="column"
-                  justify="center"
-                  alignItems="center"
                   item
                   xs={12}
                   sm={12}
                   md={3}
                   lg={3}
-                  alignItems=""
+                  spacing={2}
                 >
                   <Grid
+                    item
+                    container
                     direction="row"
-                    alignItems="center"
                     justify="center"
-                    spacing={2}
+                    alignItems="center"
                   >
-                    <Grid item container justify="center" alignItems="center">
+                    <Grid item style={{ flex: 1 }}>
                       <Avatar />
                     </Grid>
-                    <Grid>{review.date}</Grid>
+                    <Grid item>
+                      <Rating defaultValue={2} readOnly />
+                    </Grid>
                   </Grid>
-                  <Grid>
+
+                  <Grid item>
                     <h2>{review.review}</h2>
+                  </Grid>
+                  <Grid item>
+                    <p>{review.date}</p>
                   </Grid>
                 </Grid>
               );

@@ -1,18 +1,8 @@
-import React, { useEffect, useState } from "react";
-import {
-  Grid,
-  Container,
-  Typography,
-  TextField,
-  Button,
-  Icon,
-  Box,
-} from "@material-ui/core";
-import img from "../../assets/contactuspage.jpg";
-import emailjs from "emailjs-com";
-import { useForm } from "react-hook-form";
+import { Button, Container, Grid, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import FollowUs from "./FollowUs";
+import emailjs from "emailjs-com";
+import React from "react";
+import { useForm } from "react-hook-form";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,30 +19,36 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ContactUs = () => {
-  const [error, setError] = useState();
   const classes = useStyles();
-  let { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => {
-    console.log("data ", data);
-  };
+  let { reset, register, handleSubmit, errors } = useForm();
 
-  function sendEmail(e, data) {
+  function sendEmail(data) {
+    var templateParams = {
+      name: data.name,
+      email: data.email,
+      message: data.message,
+    };
+    // e.preventDefault(); "gmail", "template_tetglfn", templateParams, "user_PNExwXoFc1St0SmCf9zHS"
     emailjs
-      .sendForm(
+      .send(
         "gmail",
         "template_tetglfn",
-        e.target,
+        templateParams,
         "user_PNExwXoFc1St0SmCf9zHS"
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
         },
-        (error) => {
-          console.log(error.text);
+        function (error) {
+          console.log("FAILED...", error);
         }
       );
-    e.target.reset();
+    reset({
+      name: "",
+      email: "",
+      message: "",
+    });
   }
   return (
     <section className="contact" id="contactUs">
@@ -61,10 +57,6 @@ const ContactUs = () => {
           <Grid item className="topography">
             <h1>CONTACT US</h1>
           </Grid>
-
-          {/* <Grid item>
-            <img src={img} />
-          </Grid> */}
 
           <Grid
             container
@@ -99,17 +91,13 @@ const ContactUs = () => {
               md={5}
               className="card"
             >
-              <form onSubmit={sendEmail}>
+              <form onSubmit={handleSubmit(sendEmail)}>
                 <Grid item>
                   <TextField
                     variant="outlined"
                     className="textfield"
                     name="name"
                     error={errors.name ? true : false}
-                    // value={name}
-                    // onChangeText={(description) =>
-                    //   setDescription(description)
-                    // }
                     inputRef={register({ required: true })}
                     fullWidth
                     placeholder="first name"
@@ -122,10 +110,6 @@ const ContactUs = () => {
                     className="textfield"
                     name="email"
                     inputRef={register({ required: true })}
-                    // value={email}
-                    // onChangeText={(description) =>
-                    //   setDescription(description)
-                    // }
                     error={errors.email ? true : false}
                     fullWidth
                     placeholder="Email"
@@ -140,10 +124,6 @@ const ContactUs = () => {
                     rows="5"
                     multiline
                     inputRef={register({ required: true })}
-                    // value={message}
-                    // onChangeText={(description) =>
-                    //   setDescription(description)
-                    // }
                     fullWidth
                     error={errors.message ? true : false}
                     placeholder="Message"
@@ -158,13 +138,9 @@ const ContactUs = () => {
                     color="primary"
                     size="large"
                     className={classes.margin}
-                    onClick={handleSubmit(sendEmail)}
                   >
                     Submit
                   </Button>
-                </Grid>
-                <Grid item>
-                  <p style={{ color: "red" }}>{error}</p>
                 </Grid>
               </form>
             </Grid>

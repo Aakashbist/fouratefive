@@ -24,16 +24,15 @@ function Breakfast(props) {
       xl={3}
       spacing={2}
     >
-      <Grid container className="info-text">
-        <Grid container>
-          <Grid item xs={8} md={8} lg={8} sm={8} xl={8} spacing={4}>
-            <h2> {breakfast.itemName} </h2>
-          </Grid>
-          <Grid item alignContent="right">
-            <h2> {breakfast.price} </h2>
-          </Grid>
+      <Grid container className="info-text" direction="row" spacing={2}>
+        <Grid item style={{ flex: 1 }}>
+          <h2> {breakfast.itemName} </h2>
+        </Grid>
+        <Grid item alignItems="flex-end">
+          <h2> {breakfast.price} </h2>
         </Grid>
       </Grid>
+
       <Grid container className="listItem">
         {ingredients.map((ingredient, s) => {
           return (

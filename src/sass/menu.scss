@@ -7,9 +7,9 @@
   .title {
     align-items: center;
     font-weight: bolder;
-    letter-spacing: 2;
-    font-size: calc(70px + 1 * ((100vw - 320px) / 680));
-    line-height: calc(60px + 6 * ((100vw - 320px) / 680));
+    color: grey;
+    font-size: calc(30px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(30px + 6 * ((100vw - 320px) / 680));
   }
 
   .topography {
@@ -52,7 +52,7 @@
     color: $secondary-black;
     font-weight: bolder;
     font-size: calc(35px + 1 * ((100vw - 320px) / 680));
-    line-height: calc(25px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(15px + 1 * ((100vw - 320px) / 680));
   }
 
   h2 {
